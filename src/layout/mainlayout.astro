@@ -1,0 +1,31 @@
+---
+import Navbar from "../component/navbar.astro";
+import { ViewTransitions } from "astro:transitions";
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {title}
+    </title>
+    <ViewTransitions />
+  </head>
+  <body class="w-[100vh] bg-mine-secondary" style="overflow-x: hidden;">
+    <Navbar client:load />
+    <main class="ml-[100px] my-8  mt-[100px] w-[80vw]">
+      <slot>
+        kosongan nih isi woi jangan lupa...
+        <!--  ini adalah isi konten dari luar -->
+      </slot>
+
+    </main>
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+    ></script>
+  </body>
+</html>
