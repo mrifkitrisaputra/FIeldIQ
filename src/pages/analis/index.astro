@@ -1,0 +1,153 @@
+---
+import Secondlayout from "../../layout/secondlayout.astro";
+import { Image } from "astro:assets";
+import myImage from "../../../public/images/frieren.jpg";
+import Tabledatas from "../report/Tabledata.astro";
+---
+
+<Secondlayout title="analis">
+  <section>
+    <div class="w-[1440px]justify-center relative h-[1024px] items-center">
+      <div
+        class="absolute left-0 top-0 h-[1024px] w-[1440px] rounded-[10.67px]"
+      >
+      </div>
+      <div class="absolute left-[228.76px] top-0 h-[102.50px] w-[1211.24px]">
+        <div
+          class="absolute right-[75px] top-0 h-[102.50px] w-[600px] rounded-tr-[10px] bg-white opacity-50"
+        >
+        </div>
+        <div
+          class="absolute left-[37px] top-0 h-[102.50px] w-[483.72px] rounded-bl-[10px] bg-white opacity-50"
+        >
+        </div>
+        <div
+          class="absolute left-[66.96px] top-[33.05px] h-[36.13px] w-[138.51px] font-secondary text-3xl font-bold text-black"
+        >
+          Map
+        </div>
+        <div
+          class="absolute left-[247.55px] top-[29.83px] inline-flex h-[42.83px] w-[198.09px] items-center justify-center gap-[10.67px] rounded-[10.67px] bg-white p-[10.67px]"
+        >
+          <div class="font-secondary text-[12.80px] font-medium text-black">
+            16/03/2024
+          </div>
+          <div class="relative ml-2 h-[29.34px] w-[21.34px]">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H208c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H336zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H208zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H336c-8.8 0-16 7.2-16 16z"
+              ></path></svg
+            >
+          </div>
+        </div>
+        <div
+          class="absolute left-[950.30px] top-[29.24px] inline-flex h-11 w-[156.45px] items-center justify-center gap-[20.14px]"
+        >
+          <button
+            id="dropdownUserAvatarButton"
+            data-dropdown-toggle="dropdownAvatar"
+            class=""
+            type="button"
+          >
+            <span class="sr-only">Open user menu</span>
+            <Image
+              class="h-8 w-8 rounded-full"
+              src={myImage}
+              alt="user photo"
+            />
+          </button>
+          <div
+            id="dropdownAvatar"
+            class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+          >
+            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+              <div>Bonnie Green</div>
+              <div class="truncate font-medium">name@flowbite.com</div>
+            </div>
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownUserAvatarButton"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Settings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Earnings</a
+                >
+              </li>
+            </ul>
+            <div class="py-2">
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Sign out</a
+              >
+            </div>
+          </div>
+          <div class="font-secondary text-[14.94px] font-bold text-black">
+            User
+          </div>
+        </div>
+      </div>
+      <!-- content -->
+      <div
+        class="absolute left-[266px] mt-[120px] h-auto w-[79.5%] justify-center"
+      >
+        <img src="../../../public/images/status.png" alt="status" />
+        <div class="grid grid-cols-2 gap-4">
+          <div class="mt-5">
+            <a href="/sun">
+              <img
+                class="h-auto w-full"
+                src="../../../public/images/sun.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <div class="mt-5">
+            <a href="/humid">
+              <img
+                class="h-auto w-full"
+                src="../../../public/images/hum.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <div>
+            <a href="/ph">
+              <img
+                class="h-auto w-full"
+                src="../../../public/images/ph.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <div>
+            <a href="/temp">
+              <img
+                class="h-auto w-full"
+                src="../../../public/images/temp.png"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- content end -->
+    </div>
+  </section>
+</Secondlayout>
