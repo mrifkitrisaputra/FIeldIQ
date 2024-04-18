@@ -1,5 +1,7 @@
 ---
 import Secondlayout from "../../layout/secondlayout.astro";
+import { Image } from "astro:assets";
+import myImage from "../../../public/images/frieren.jpg";
 ---
 
 <Secondlayout title="position">
@@ -19,7 +21,7 @@ import Secondlayout from "../../layout/secondlayout.astro";
         >
         </div>
         <div
-          class="absolute left-[66.96px] top-[33.05px] h-[36.13px] w-[138.51px] font-['Inter'] text-3xl font-bold text-black"
+          class="absolute left-[66.96px] top-[33.05px] h-[36.13px] w-[138.51px] font-secondary text-3xl font-bold text-black"
         >
           Map
         </div>
@@ -40,26 +42,84 @@ import Secondlayout from "../../layout/secondlayout.astro";
         <div
           class="absolute left-[950.30px] top-[29.24px] inline-flex h-11 w-[156.45px] items-center justify-center gap-[20.14px]"
         >
-          <img
-            class="h-[43.86px] w-[43.86px] rounded-full"
-            src="../../../public/images/frieren.jpg"
-          />
-          <div class="font-['Inter'] text-[14.94px] font-bold text-black">
+          <button
+            id="dropdownUserAvatarButton"
+            data-dropdown-toggle="dropdownAvatar"
+            class=""
+            type="button"
+          >
+            <span class="sr-only">Open user menu</span>
+            <Image
+              class="h-8 w-8 rounded-full"
+              src={myImage}
+              alt="user photo"
+            />
+          </button>
+          <div
+            id="dropdownAvatar"
+            class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+          >
+            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+              <div>Bonnie Green</div>
+              <div class="truncate font-medium">name@flowbite.com</div>
+            </div>
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownUserAvatarButton"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Settings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Earnings</a
+                >
+              </li>
+            </ul>
+            <div class="py-2">
+              <a
+                href="#"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                >Sign out</a
+              >
+            </div>
+          </div>
+          <div class="font-secondary text-[14.94px] font-bold text-black">
             User
           </div>
         </div>
       </div>
-      <!-- map -->
+      <!-- content -->
       <img
-        class="absolute left-[200px] mt-[100px] inline-flex h-[75%] w-[90%] items-center justify-center "
+        class="absolute left-[200px] mt-[100px] inline-flex h-[75%] w-[90%] items-center justify-center"
         src="../../../public/images/maping.png"
-        alt=""
+        alt="mapImage"
+        id="mapImage"
       />
+      <!-- content end -->
       <div
         class="absolute left-[1030.19px] top-[39.58px] inline-flex items-center justify-center gap-[11px] rounded-[23px]"
       >
         <label class="inline-flex cursor-pointer items-center">
-          <input type="checkbox" value="" class="peer sr-only" />
+          <input
+            type="checkbox"
+            value=""
+            class="peer sr-only"
+            onchange="toggleSatelliteMode(event)"
+          />
           <div
             class="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800 rtl:peer-checked:after:-translate-x-full"
           >
@@ -72,4 +132,16 @@ import Secondlayout from "../../layout/secondlayout.astro";
       </div>
     </div>
   </section>
+
+  <script>
+    const checkbox = document.querySelector('input[type="checkbox"]');
+    checkbox.addEventListener("change", function () {
+      const mapImage = document.getElementById("mapImage") as HTMLImageElement;
+      if (this.checked) {
+        mapImage.src = "../../../public/images/satelite mode.png";
+      } else {
+        mapImage.src = "../../../public/images/maping.png";
+      }
+    });
+  </script>
 </Secondlayout>
