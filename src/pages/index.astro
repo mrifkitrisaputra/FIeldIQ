@@ -10,7 +10,8 @@ import Content from "./homepage/content.astro";
     <div
       class="absolute left-[800px] mt-[35px] inline-flex h-[380px] w-[508.78px] items-center justify-center rounded-[20px] bg-mine-basic"
     >
-      <img class="flex h-[334px] w-[460px] items-center justify-center"
+      <img
+        class="flex h-[334px] w-[460px] items-center justify-center"
         src="../../public//images/grafik.png"
         alt="grafik"
       />
@@ -36,7 +37,7 @@ import Content from "./homepage/content.astro";
         class="h-18 absolute left-0 top-0 w-[197px] rounded-[16.88px] bg-amber-300"
       >
       </div>
-  
+
       <!-- Modal toggle -->
       <div
         class="h-18 absolute left-0 top-0 h-14 w-[197px] rounded-[16.88px] bg-amber-300"
@@ -50,7 +51,7 @@ import Content from "./homepage/content.astro";
           Get started !
         </button>
       </div>
-  
+
       <!-- Main modal -->
       <div
         id="authentication-modal"
@@ -110,7 +111,7 @@ import Content from "./homepage/content.astro";
                     required
                   />
                 </div>
-  
+
                 <div>
                   <label
                     for="password"
@@ -169,7 +170,9 @@ import Content from "./homepage/content.astro";
                   class="w-full rounded-lg bg-amber-300 px-5 py-2.5 text-center text-sm font-medium text-zinc-800 hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >Login to your account
                 </button>
-                <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                <div
+                  class="text-sm font-medium text-gray-500 dark:text-gray-300"
+                >
                   Not registered? <a
                     href="/signup"
                     class="text-amber-300 hover:underline dark:text-amber-200"
@@ -183,7 +186,7 @@ import Content from "./homepage/content.astro";
       </div>
     </div>
   </section>
-  
+
   <script>
     function handleClick() {
       alert(
@@ -192,9 +195,6 @@ import Content from "./homepage/content.astro";
       );
       window.location.href = "/#";
     }
-    document
-      .getElementById("buttonAlert")
-      .addEventListener("click", handleClick);
   </script>
 </Mainlayout>
 <Content client:idle />
